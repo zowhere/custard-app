@@ -43,7 +43,7 @@ export function createAuthEmailTemplate({
     }
     
     .header {
-      background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+      background: linear-gradient(135deg, #d2ed3aff 0%, #baeb25ff 100%);
       padding: 32px 24px;
       text-align: center;
     }
@@ -125,7 +125,7 @@ export function createAuthEmailTemplate({
     .verification-code {
       font-size: 36px;
       font-weight: bold;
-      color: #7c3aed;
+      color: #f3f4f6;
       font-family: 'Courier New', monospace;
       letter-spacing: 8px;
       margin-bottom: 16px;
@@ -147,7 +147,7 @@ export function createAuthEmailTemplate({
     
     .verify-button {
       display: inline-block;
-      background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
       color: white;
       text-decoration: none;
       padding: 16px 32px;
@@ -183,7 +183,7 @@ export function createAuthEmailTemplate({
     
     .alternative-link {
       word-break: break-all;
-      color: #7c3aed;
+      color: #e5e7eb;
       text-decoration: none;
       font-family: 'Courier New', monospace;
       font-size: 13px;
@@ -238,7 +238,7 @@ export function createAuthEmailTemplate({
     }
     
     .footer-link {
-      color: #7c3aed;
+      color: #e5e7eb;
       text-decoration: none;
       font-size: 14px;
     }
