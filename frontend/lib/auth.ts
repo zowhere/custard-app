@@ -1,6 +1,6 @@
 "use client";
 
-const TOKEN_KEY = "abakcus_auth_token";
+const TOKEN_KEY = "custard_auth_token";
 
 export interface AuthUser {
   id: string;
