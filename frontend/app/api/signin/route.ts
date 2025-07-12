@@ -9,7 +9,13 @@ const resend = new Resend(`${process.env.RESEND_API}`);
 
 export async function POST(req: Request) {
   const link = `${process.env.LINK}/verify`;
-  const code = crypto.randomBytes(3).toString("hex").toLowerCase();
+  const code = "111111";
+  
+  /*
+  const code =process.env.ENV === "development"
+      ? "111111"
+      : crypto.randomBytes(3).toString("hex").toLowerCase();
+  */
 
   try {
     const { email } = await req.json();
