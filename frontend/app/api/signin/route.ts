@@ -1,6 +1,6 @@
 import client from "@/lib/mongo";
 import { Resend } from "resend";
-import crypto from "crypto";
+// import crypto from "crypto";
 import { Wallet } from "ethers";
 import { nanoid } from "nanoid";
 import { createAuthEmailTemplate } from "@/lib/email";
@@ -10,7 +10,7 @@ const resend = new Resend(`${process.env.RESEND_API}`);
 export async function POST(req: Request) {
   const link = `${process.env.LINK}/verify`;
   const code = "111111";
-  
+
   /*
   const code =process.env.ENV === "development"
       ? "111111"
