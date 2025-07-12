@@ -1,34 +1,3 @@
-# Custard App: Loyalty points 
+![](https://pbs.twimg.com/profile_banners/1103191459409420288/1573207178/1500x500)
 
-## Structure
-```
-/frontend
-    ├── api/    # Api
-    ├── components/    # Reusable UI components
-    ├── screens/       # App screens
-    ├── hooks/         # Custom hooks
-    ├── utils/         # Helper functions
-    ├── store/         # Zustand state management
-    ├── assets/        # Images, icons
-    ├── App.tsx        # Main entry point 
-
-/contract
-    ├── contracts/    
-```
-
-
-## frontend
-## 🚀 Running the App
-```sh
-npm install
-npm run dev
-```
-## contract
-
-## 🚀 Running the App
-```sh
-cd contract
-npm install
-npx hardhat compile
-npx hardhat 
-```
+# Custard: Loyalty points Program
