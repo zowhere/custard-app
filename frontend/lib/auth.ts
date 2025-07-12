@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-const TOKEN_KEY = "abakcus_auth_token"
+const TOKEN_KEY = "abakcus_auth_token";
 
 export interface AuthUser {
-  id: string
-  email: string
-  name?: string
-  businessName?: string
-  onboardingCompleted: boolean
-  profileCompleted: boolean
-  businessCompleted: boolean
+  id: string;
+  email: string;
+  name?: string;
+  businessName?: string;
+  onboardingCompleted: boolean;
+  profileCompleted: boolean;
+  businessCompleted: boolean;
 }
 
 class AuthManager {
@@ -17,81 +17,84 @@ class AuthManager {
 
   constructor() {
     if (typeof window !== "undefined") {
-      this.loadFromStorage()
+      this.loadFromStorage();
     }
   }
 
   private loadFromStorage() {
     try {
-      const token = localStorage.getItem(TOKEN_KEY)
+      const token = localStorage.getItem(TOKEN_KEY);
 
       if (token) {
-        const payload = JSON.parse(atob(token.split(".")[1]))
+        const payload = JSON.parse(atob(token.split(".")[1]));
         if (payload.exp * 1000 > Date.now()) {
-          this.token = token
+          this.token = token;
         } else {
-          this.clearAuth()
+          this.clearAuth();
         }
       }
     } catch (error) {
-      console.error("Failed to load auth from storage:", error)
-      this.clearAuth()
+      console.error("Failed to load auth from storage:", error);
+      this.clearAuth();
     }
   }
 
-  setAuth( token: string ) {
-    this.token = token
+  setAuth(token: string) {
+    this.token = token;
     if (typeof window !== "undefined") {
-      localStorage.setItem(TOKEN_KEY, token)
+      localStorage.setItem(TOKEN_KEY, token);
     }
   }
 
   clearAuth() {
-    this.token = null
+    this.token = null;
     if (typeof window !== "undefined") {
-      localStorage.removeItem(TOKEN_KEY)
+      localStorage.removeItem(TOKEN_KEY);
     }
   }
 
   getToken(): string | null {
-    return this.token
+    return this.token;
   }
 
   isAuthenticated(): boolean {
-    return this.token !== null
+    return this.token !== null;
   }
 
-  async makeAuthenticatedRequest(url: string, options: RequestInit = {}): Promise<Response> {
-    const token = this.getToken()
+  async makeAuthenticatedRequest(
+    url: string,
+    options: RequestInit = {},
+  ): Promise<Response> {
+    const token = this.getToken();
 
     if (!token) {
-      throw new Error("No authentication token available")
+      throw new Error("No authentication token available");
     }
 
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
       ...options.headers,
-    }
+    };
 
     const response = await fetch(url, {
       ...options,
       headers,
-    })
+    });
 
     if (response.status === 401) {
-      this.clearAuth()
+      this.clearAuth();
       if (typeof window !== "undefined") {
-        window.location.href = "/signin"
+        window.location.href = "/signin";
       }
-      throw new Error("Authentication failed")
+      throw new Error("Authentication failed");
     }
 
-    return response
+    return response;
   }
 }
 
-export const authManager = new AuthManager()
+export const authManager = new AuthManager();
 
 export function useAuth() {
   return {
@@ -99,6 +102,7 @@ export function useAuth() {
     isAuthenticated: authManager.isAuthenticated(),
     setAuth: authManager.setAuth.bind(authManager),
     clearAuth: authManager.clearAuth.bind(authManager),
-    makeAuthenticatedRequest: authManager.makeAuthenticatedRequest.bind(authManager),
-  }
+    makeAuthenticatedRequest:
+      authManager.makeAuthenticatedRequest.bind(authManager),
+  };
 }

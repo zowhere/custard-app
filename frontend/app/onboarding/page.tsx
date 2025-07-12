@@ -1,16 +1,17 @@
-import React from "react";
+import type { Metadata } from "next";
+import OnboardingFlow from "@/components/onboarding";
+import { Suspense } from "react";
 
-/* 
-  # onbaording page 
-  step 1: enter personal details
-  step 2: enter company details
-  step 3: create a new factory contract
-*/
+export const metadata: Metadata = {
+  title: "Welcome to Abakcus | Complete Your Setup",
+  description:
+    "Complete your profile and business setup to start using Abakcus",
+};
 
-export default function Onbaording() {
+export default function OnboardingPage() {
   return (
-    <div>
-    </div>
+    <Suspense>
+      <OnboardingFlow />
+    </Suspense>
   );
 }
-    

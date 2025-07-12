@@ -1,19 +1,19 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
 export type Business = {
-    businessName: string,
-    businessType: string,
-    businessAddress: string,
-    businesswebsite?: string,
-    businessDescription: string,
-}
+  businessName: string;
+  businessType: string;
+  businessAddress: string;
+  businesswebsite?: string;
+  businessDescription: string;
+};
 
 export interface UserStoreInterface {
-    business: Business | null,
-    updateBusiness: (data: Business) => void
+  business: Business | null;
+  updateBusiness: (data: Business) => void;
 }
 
 export const useBusinessStore = create<UserStoreInterface>((set) => ({
-    business: null,
-    updateBusiness: (data: Business) => set({ business: {...data} }),
+  business: null,
+  updateBusiness: (data: Business) => set({ business: { ...data } }),
 }));
