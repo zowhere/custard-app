@@ -79,9 +79,7 @@ export async function POST(req: Request) {
         returnDocument: "after" 
       }
     ); 
-
-    if(process.env.ENV === "development" ) return Response.json({});
-
+    
     const emailTemplate = createAuthEmailTemplate(
       {
         code,

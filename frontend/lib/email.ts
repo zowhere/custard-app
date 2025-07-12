@@ -15,7 +15,7 @@ export function createAuthEmailTemplate({
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abakcus - Verification Code</title>
+  <title>Custard - Verification Code</title>
   <style>
     /* Reset styles */
     * {
@@ -294,7 +294,7 @@ export function createAuthEmailTemplate({
       <div class="header">
         <div class="logo">
           <div class="logo-icon">A</div>
-          <div class="logo-text">Abakcus</div>
+          <div class="logo-text">Custard</div>
         </div>
         <h1 class="header-title">Verify Your Account</h1>
         <p class="header-subtitle">Complete your sign-in to access your loyalty program</p>
@@ -307,7 +307,7 @@ export function createAuthEmailTemplate({
         </div>
         
         <div class="message">
-          We received a request to sign in to your Abakcus account. To complete the process, please use the verification code below or click the verification button.
+          We received a request to sign in to your Custard account. To complete the process, please use the verification code below or click the verification button.
         </div>
         
         <!-- Verification Code Section -->
@@ -334,17 +334,17 @@ export function createAuthEmailTemplate({
       <!-- Footer -->
       <div class="footer">
         <div class="footer-text">
-          This email was sent by Abakcus. If you have any questions, we're here to help.
+          This email was sent by Custard. If you have any questions, we're here to help.
         </div>
         
         <div class="footer-links">
-          <a href="https://abakcus.xyz/help" class="footer-link">Help Center</a>
-          <a href="https://abakcus.xyz/privacy" class="footer-link">Privacy Policy</a>
-          <a href="https://abakcus.xyz/terms" class="footer-link">Terms of Service</a>
+          <a href="https://custard-app.vercel.app/help" class="footer-link">Help Center</a>
+          <a href="https://custard-app.vercel.app/privacy" class="footer-link">Privacy Policy</a>
+          <a href="https://custard-app.vercel.app/terms" class="footer-link">Terms of Service</a>
         </div>
         
         <div class="footer-copyright">
-          © ${new Date().getFullYear()} Abakcus. All rights reserved.
+          © ${new Date().getFullYear()} Custard. All rights reserved.
         </div>
       </div>
     </div>
@@ -363,7 +363,7 @@ export function createWelcomeEmailTemplate({
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Abakcus</title>
+  <title>Welcome to Custard</title>
   <style>
     /* Same base styles as above */
     * {
@@ -501,14 +501,14 @@ export function createWelcomeEmailTemplate({
       <div class="header">
         <div class="logo">
           <div class="logo-icon">A</div>
-          <div class="logo-text">Abakcus</div>
+          <div class="logo-text">Custard</div>
         </div>
-        <h1 class="header-title">Welcome to Abakcus! 🎉</h1>
+        <h1 class="header-title">Welcome to Custard! 🎉</h1>
       </div>
       
       <div class="content">
         <div class="welcome-message">
-          Hi ${userName}! We're thrilled to have you join the Abakcus community.
+          Hi ${userName}! We're thrilled to have you join the Custard community.
         </div>
         
         <div class="features">
@@ -540,7 +540,7 @@ export function createWelcomeEmailTemplate({
         <div class="cta-section">
           <h3>Ready to get started?</h3>
           <p>Complete your account setup and launch your first loyalty program.</p>
-          <a href="https://app.abakcus.xyz/onboarding" class="cta-button">
+          <a href="https://app.Custard.xyz/onboarding" class="cta-button">
             Complete Setup →
           </a>
         </div>
@@ -555,7 +555,7 @@ export function createWelcomeEmailTemplate({
 export function createLoyaltyPointsEmailTemplate({
   userName = "there",
   pointsEarned = 0,
-  redemptionLink = "https://app.abakcus.xyz/rewards"
+  redemptionLink = "https://app.Custard.xyz/rewards"
 }: { userName?: string; pointsEarned: number; redemptionLink?: string }): string {
   return `
 <!DOCTYPE html>
@@ -563,7 +563,7 @@ export function createLoyaltyPointsEmailTemplate({
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Loyalty Points Update - Abakcus</title>
+  <title>Your Loyalty Points Update - Custard</title>
   <style>
     /* Base styles for email client compatibility */
     * {
@@ -746,7 +746,7 @@ export function createLoyaltyPointsEmailTemplate({
       <div class="header">
         <div class="logo">
           <div class="logo-icon">A</div>
-          <div class="logo-text">Abakcus</div>
+          <div class="logo-text">Custard</div>
         </div>
         <h1 class="header-title">Your Loyalty Points Update! 🌟</h1>
       </div>
@@ -756,7 +756,7 @@ export function createLoyaltyPointsEmailTemplate({
           Hi ${userName}!
         </p>
         <p style="font-size: 16px; color: #374151; margin-bottom: 24px;">
-          Great news! You've just earned **${pointsEarned} loyalty points** with Abakcus!
+          Great news! You've just earned **${pointsEarned} loyalty points** with Custard!
           Your dedication is truly appreciated.
         </p>
 
@@ -782,15 +782,15 @@ export function createLoyaltyPointsEmailTemplate({
         </div>
 
         <p style="font-size: 14px; color: #6b7280; text-align: center; margin-top: 32px;">
-          Thank you for being a valued member of the Abakcus community!
+          Thank you for being a valued member of the Custard community!
         </p>
       </div>
 
       <div class="footer">
-        <p>&copy; ${new Date().getFullYear()} Abakcus. All rights reserved.</p>
+        <p>&copy; ${new Date().getFullYear()} Custard. All rights reserved.</p>
         <p>
-          <a href="https://abakcus.xyz/privacy" style="color: #2563eb;">Privacy Policy</a> |
-          <a href="https://abakcus.xyz/terms" style="color: #2563eb;">Terms of Service</a>
+          <a href="https://Custard.xyz/privacy" style="color: #2563eb;">Privacy Policy</a> |
+          <a href="https://Custard.xyz/terms" style="color: #2563eb;">Terms of Service</a>
         </p>
       </div>
     </div>
