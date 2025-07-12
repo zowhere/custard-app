@@ -8,7 +8,7 @@ const main = async () => {
   const tokenContractFactory = await hre.ethers.getContractFactory("TokenFactory");
   const tokenContract = await tokenContractFactory.deploy();
   await tokenContract.waitForDeployment();
-  const contractAddress = await tokenContract.getAddress;
+  const contractAddress = await tokenContract.getAddress();
   
   console.log("Token Factory address: ", contractAddress);
 };
