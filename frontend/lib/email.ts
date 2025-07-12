@@ -1,8 +1,8 @@
 interface AuthEmailProps {
-  code: string
-  link: string
-  userName?: string
-  expirationMinutes?: number
+  code: string;
+  link: string;
+  userName?: string;
+  expirationMinutes?: number;
 }
 
 export function createAuthEmailTemplate({
@@ -351,12 +351,14 @@ export function createAuthEmailTemplate({
   </div>
 </body>
 </html>
-  `
+  `;
 }
 
-export function createWelcomeEmailTemplate({ 
-    userName = "there" 
-}: { userName?: string }): string {
+export function createWelcomeEmailTemplate({
+  userName = "there",
+}: {
+  userName?: string;
+}): string {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -549,14 +551,18 @@ export function createWelcomeEmailTemplate({
   </div>
 </body>
 </html>
-  `
+  `;
 }
 
 export function createLoyaltyPointsEmailTemplate({
   userName = "there",
   pointsEarned = 0,
-  redemptionLink = "https://app.Custard.xyz/rewards"
-}: { userName?: string; pointsEarned: number; redemptionLink?: string }): string {
+  redemptionLink = "https://app.Custard.xyz/rewards",
+}: {
+  userName?: string;
+  pointsEarned: number;
+  redemptionLink?: string;
+}): string {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -799,5 +805,3 @@ export function createLoyaltyPointsEmailTemplate({
 </html>
   `;
 }
-
- 
