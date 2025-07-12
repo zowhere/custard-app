@@ -1,8 +1,6 @@
 "use client";
 import SignInForm from "@/components/signin";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function SignUpPage() {
   return (

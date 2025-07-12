@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 "use client";
 
 import type React from "react";
@@ -16,25 +17,27 @@ import {
 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useUserStore } from "@/store/user";
-import { useBusinessStore } from "@/store/business";
+// import { useBusinessStore } from "@/store/business";
 import { useTokenStore } from "@/store/token";
 
 type Step = "email" | "code" | "success";
 
+/*
 interface User {
   id: string;
   email: string;
   name: string;
   businessName: string;
 }
+*/
 
 export default function SignInForm() {
-  const { updateBusiness } = useBusinessStore();
-  const { updateToken } = useTokenStore();
-  const { updateUser } = useUserStore();
+  // const { updateBusiness } = useBusinessStore();
+  // const { updateToken } = useTokenStore();
+  // const { updateUser } = useUserStore();
   const {} = useTokenStore();
   const {} = useUserStore();
-  const { setAuth, isAuthenticated } = useAuth();
+  const { setAuth, /*isAuthenticated*/ } = useAuth();
   const [step, setStep] = useState<Step>("email");
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
@@ -178,10 +181,10 @@ export default function SignInForm() {
             <CheckCircle className="w-8 h-8 text-green-600" />
           </div>
           <h3 className="text-xl font-semibold text-gray-900 mb-2">
-            Welcome back, {}!
+           {` Welcome back!`}
           </h3>
           <p className="text-sm text-gray-600 mb-4">
-            You've successfully signed in to your Abakcus account.
+          {"You've successfully signed in to your Abakcus account."}
           </p>
         </div>
 
@@ -194,7 +197,7 @@ export default function SignInForm() {
 
         <Alert className="border-yellow-200 bg-yellow-50">
           <AlertDescription className="text-yellow-800 text-sm">
-            Redirecting you to your dashboard in a few seconds...
+           {"Redirecting you to your dashboard in a few seconds..."}
           </AlertDescription>
         </Alert>
 
@@ -220,7 +223,7 @@ export default function SignInForm() {
             Check your email
           </h3>
           <p className="text-sm text-gray-600">
-            We've sent a verification code to
+           {"We've sent a verification code to"}
             <br />
             <span className="font-mono bg-gray-50 px-2 py-1 rounded text-xs">
               {email}
@@ -306,13 +309,13 @@ export default function SignInForm() {
 
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
           <h4 className="text-sm font-medium text-blue-900 mb-2">
-            Didn't receive the code?
+            {"Didn't receive the code?"}
           </h4>
           <ul className="text-xs text-blue-800 space-y-1">
             <li>• Check your spam or junk folder</li>
             <li>• Make sure you entered the correct email address</li>
             <li>• The code expires in 10 minutes</li>
-            <li>• Try resending the code if it doesn't arrive</li>
+            <li>{"• Try resending the code if it doesn't arrive"}</li>
           </ul>
         </div>
       </div>

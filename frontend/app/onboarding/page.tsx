@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function OnboardingPage() {
   return (
     <Suspense>
-      <OnboardingFlow />
+      <OnboardingFlow />  
     </Suspense>
   );
 }

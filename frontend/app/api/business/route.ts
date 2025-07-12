@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import client from "@/lib/mongo";
 import { withAuth, type AuthenticatedRequest } from "@/lib/middleware";
 
-async function postHandler(request: AuthenticatedRequest) {
+async function putHandler(request: AuthenticatedRequest) {
   const db = client.db(`${process.env.DATABASE}`);
   try {
     const { user } = request;
@@ -66,5 +66,5 @@ async function getHandler(request: AuthenticatedRequest) {
   }
 }
 
-export const PUT = withAuth(postHandler);
+export const PUT = withAuth(putHandler);
 export const GET = withAuth(getHandler);

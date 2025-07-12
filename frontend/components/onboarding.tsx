@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 "use client";
 
 import type React from "react";
@@ -30,7 +31,6 @@ import {
 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useSearchParams } from "next/navigation";
-import { useUserStore } from "../store/user";
 
 type OnboardingStep = "profile" | "business" | "token" | "complete";
 
@@ -130,6 +130,7 @@ export default function OnboardingFlow() {
 
       throw Error("Failed to save profile. Please try again.");
     } catch (err) {
+      console.log(err)
       setError("Failed to save profile. Please try again.");
     } finally {
       setIsLoading(false);
@@ -142,6 +143,7 @@ export default function OnboardingFlow() {
     setError("");
 
     try {
+
       const response = await makeAuthenticatedRequest("/api/business", {
         method: "PUT",
         body: JSON.stringify({
@@ -165,7 +167,7 @@ export default function OnboardingFlow() {
       // Track onboarding completion
       throw Error("Failed to save profile. Please try again.");
     } catch (err) {
-      console.log(error);
+      console.log(err);
       setError("Failed to save business profile. Please try again.");
     } finally {
       setIsLoading(false);
@@ -279,7 +281,7 @@ export default function OnboardingFlow() {
             Welcome to Custard!
           </h1>
           <p className="text-gray-600">
-            Let's set up your account to get started with your loyalty program.
+            {"Let's set up your account to get started with your loyalty program."}
           </p>
         </div>
 
@@ -743,22 +745,21 @@ export default function OnboardingFlow() {
                 <Sparkles className="w-10 h-10 text-green-600" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                🎉 Welcome to Custard!
+                {"🎉 Welcome to Custard!"}
               </h2>
               <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                Your account is all set up! You're ready to start building
-                customer loyalty and growing your business.
+                {"Your account is all set up! You're ready to start building customer loyalty and growing your business."}
               </p>
 
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-6">
                 <h3 className="font-semibold text-yellow-900 mb-2">
-                  What's next?
+                 {"What's next?"}
                 </h3>
                 <ul className="text-sm text-yellow-800 space-y-1">
                   <li>• Set up your loyalty program rules</li>
                   <li>• Customize your rewards and points system</li>
                   <li>• Start inviting customers to join</li>
-                  <li>• Track your program's performance</li>
+                  <li>{" What's next?"}</li>
                 </ul>
               </div>
 
