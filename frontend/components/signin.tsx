@@ -184,7 +184,7 @@ export default function SignInForm() {
            {` Welcome back!`}
           </h3>
           <p className="text-sm text-gray-600 mb-4">
-          {"You've successfully signed in to your Abakcus account."}
+          {"You've successfully signed in to your Custard account."}
           </p>
         </div>
 

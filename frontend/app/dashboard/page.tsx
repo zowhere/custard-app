@@ -264,7 +264,7 @@ export default function DashboardPage() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <span className="font-bold text-xl">Abakcus</span>
+                <span className="font-bold text-xl">Custard</span>
               </div>
             </div>
           </div>

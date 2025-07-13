@@ -45,7 +45,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">A</span>
                 </div>
-                <span className="font-bold text-xl">Abakcus</span>
+                <span className="font-bold text-xl">Custard</span>
               </div>
             </div>
             </SidebarMenuButton>

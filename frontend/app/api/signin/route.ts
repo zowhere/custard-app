@@ -95,7 +95,7 @@ export async function POST(req: Request) {
     });
 
     const { error } = await resend.emails.send({
-      from: "Custard <no-reply@abakcus.xyz>",
+      from: "Custard <no-reply@Custard.xyz>",
       to: [email],
       subject: "Custard: Auth",
       html: emailTemplate,
