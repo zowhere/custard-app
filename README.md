@@ -2,18 +2,25 @@
 
 # Custard: Loyalty points Program
 # Structure 
+```
 /contract
-    ├── api/    # Api
-    ├── components/    # Reusable UI components
-    ├── screens/       # App screens
-    ├── hooks/         # Custom hooks
-    ├── utils/         # Helper functions
-    ├── store/         # Zustand state management
-    ├── assets/        # Images, icons
-    ├── App.tsx        # Main entry point 
-
+    ├── artificats/               #artifacts
+    ├── cache/                    # Cache
+    ├── contracts/ scripts       # Contracts
+    ├── scripts/         # Custom hooks
+```
+```   
 /frontend
-    ├── contracts/    
+    ├── App/Api/dashboard/ onboarding       # Main entry point #API
+    ├── Artificats/contracts                # Artifacts
+    ├── Components/UI                       # Reusable UI components
+    ├── hooks/                              #Custom hooks
+    ├── lib/        
+    ├── public/        
+    ├── Store/
+```    
+   
+
 
 ## Getting starteds
 ### Contract
