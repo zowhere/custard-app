@@ -19,9 +19,20 @@
     ├── public/        
     ├── Store/
 ```    
-   
 
-
-## Getting starteds
+## Getting started
 ### Contract
+```
+    cd contract
+    npm install
+    npx hardhat deploy
+    npm run deploy:primodial
+```
+
 ### Frontend
+```
+    cd frontend
+    npm install
+    npm run dev
+```
+
