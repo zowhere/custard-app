@@ -103,13 +103,18 @@ export default function DashboardPage() {
       const { name, email } = user;
       const { businessName } = business;
       
+      const totalSent = transactions
+      .filter((t: Transaction) => t.type === "send")
+      //@ts-expect-error use of type assertion for amount
+      .reduce((sum, t) => sum + t.amount, 0);
+
       setUserProfile({
         email,
         name,
         businessName,
         tokenSymbol,
         tokenName,
-        balance: totalSupply
+        balance: totalSupply - totalSent,
       });
 
       if(transactions){
