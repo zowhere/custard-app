@@ -18,9 +18,29 @@
     ├── lib/        
     ├── public/        
     ├── Store/
-```    
+```
 
+## Prerequisite
+- npm
+npm install npm@latest -g
+
+
+
+## .env set up
+```
+MONGODB_URI=
+RESEND_API=
+FACTORY_CONTRACT_ADDRESS=
+RPC_URL=
+PUBLIC_KEY=
+PRIVATE_KEY=
+ENV=
+LINK=
+DATABASE=
+```
+   
 ## Getting started
+
 ### Contract
 ```
     cd contract
@@ -35,4 +55,6 @@
     npm install
     npm run dev
 ```
+
+
 
