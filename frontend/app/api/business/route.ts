@@ -41,7 +41,7 @@ async function putHandler(request: AuthenticatedRequest) {
   }
 }
 
-async function getHandler(request: AuthenticatedRequest) {
+async function getHandler(request: AuthenticatedRequest) {  
   const db = client.db(`${process.env.DATABASE}`);
   try {
     const { user } = request;

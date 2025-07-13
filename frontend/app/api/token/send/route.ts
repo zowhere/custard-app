@@ -28,6 +28,12 @@ async function handler(request: AuthenticatedRequest) {
     const mnemonic = wallet.mnemonic;
     const address = await wallet.getAddress();
 
+    const pointsResponse = await db.collection("points").findOne({
+      pointsResponse: response?.businessID,
+    });
+    
+    console.log(pointsResponse)
+
     const updateCustomer = await db.collection("customers").findOneAndUpdate(
       {
         email,
@@ -64,7 +70,7 @@ async function handler(request: AuthenticatedRequest) {
     });
 
     const { error } = await resend.emails.send({
-      from: "Custard <no-reply@api.abakcus.xyz>",
+      from: "Abakcus <no-reply@abakcus.xyz>",
       to: [email],
       subject: `🎉 You earned ${amount} Points`,
       html: templatEmail,
